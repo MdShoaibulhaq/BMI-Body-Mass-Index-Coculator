@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator</title>
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="./src/index.js"></script>
+    
+   
     <style>
         .box {
             border:2px solid black;
@@ -19,63 +23,15 @@
            
         }
     </style>
-    <script>
-
-        function Clear(){
-           document.getElementById("age").value="";
-           document.getElementById("txtheight").value="";
-           document.getElementById("txtweight").value="";
-           document.querySelector('input[name="gender"]:checked').checked=false;
-           document.getElementById("lblResult").outerHTML="";
-           document.getElementById("lblBMI").innerText="";
-
-        }
-        function Calculate() {
-            var age = parseInt(document.getElementById("age").value);
-            var height = parseFloat(document.getElementById("txtheight").value) * 0.3048;
-            var weight = parseFloat(document.getElementById("txtweight").value);
-
-            var BMI = weight/(height * height);
-
-            document.getElementById("lblResult").innerHTML=`BMI=${Math.round(BMI)} per kg/m<sup>2</sup> `
-
-            if (BMI<18.5){
-                document.getElementById("lblBMI").innerText="You're in the underweight range";
-            }
-            else if(BMI>=18.5 && BMI<25){
-                document.getElementById("lblBMI").innerText="You're in the healthy weight range";
-
-            }
-            else if(BMI>=25 && BMI<30){
-                document.getElementById("lblBMI").innerText="You're in the overweight range";
-
-            }
-            else if (BMI>=30 && BMI<35){
-                document.getElementById("lblBMI").innerText="You're in the obesity class 1 range";
-
-            }
-            else if (BMI>=35 && BMI<40){
-                document.getElementById("lblBMI").innerText="You're in the obesity class 2 range";
-
-            }
-            else if (BMI>=40){
-                document.getElementById("lblBMI").innerText="You're in the obesity class 3 range";
-
-            }
-            else{
-                document.getElementById("lblBMI").innerText="Please enter values";
-            }
-        }
-
-
+    
 
     </script>
 </head>
 
-<body class="container-fluid">
+<body class="container-fluid" >
     <h2 class="text-center mt-4">BMI Calculator</h2>
     <div class="d-flex justify-content-center">
-        <div class="box">
+        <div class="box bg-info">
             <div class="mt-4">
                 <div class="d-flex">
                     <div class="me-4">Age</div>
@@ -124,9 +80,9 @@
         </div>
     </div>
 
-    <script src="../node_modules/jquery/dist/jquery.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
